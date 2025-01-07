@@ -17,6 +17,23 @@ export default function ModalComponent(): JSX.Element {
 
   const [selectedRole, setSelectedRole] = useState<UserRole>("student");
   const [userData, setUserData] = useState<UserFormData>(initialUserFormValues);
+  const {
+    name,
+    email,
+    age,
+    postCode,
+    phone,
+    hobbies,
+    url,
+    studyMinutes,
+    taskCode,
+    studyLangs,
+    score,
+    experienceDays,
+    useLangs,
+    availableStartCode,
+    availableEndCode
+  } = userData;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -83,7 +100,7 @@ export default function ModalComponent(): JSX.Element {
           label="名前"
           id="name"
           type="text"
-          value={userData.name}
+          value={name}
           onChange={handleChange}
           required
         />
@@ -91,7 +108,7 @@ export default function ModalComponent(): JSX.Element {
           label="メール"
           id="email"
           type="email"
-          value={userData.email}
+          value={email}
           onChange={handleChange}
           required
         />
@@ -99,7 +116,7 @@ export default function ModalComponent(): JSX.Element {
           label="年齢"
           id="age"
           type="number"
-          value={userData.age}
+          value={age}
           onChange={handleChange}
           required
         />
@@ -109,7 +126,7 @@ export default function ModalComponent(): JSX.Element {
           label="郵便番号"
           id="postCode"
           type="text"
-          value={userData.postCode}
+          value={postCode}
           onChange={handleChange}
           required
         />
@@ -117,7 +134,7 @@ export default function ModalComponent(): JSX.Element {
           label="電話番号"
           id="phone"
           type="tel"
-          value={userData.phone}
+          value={phone}
           onChange={handleChange}
           required
         />
@@ -125,7 +142,7 @@ export default function ModalComponent(): JSX.Element {
           label="趣味（カンマ区切り）"
           id="hobbies"
           type="text"
-          value={userData.hobbies}
+          value={hobbies}
           onChange={handleChange}
           required
         />
@@ -133,7 +150,7 @@ export default function ModalComponent(): JSX.Element {
           label="URL"
           id="url"
           type="url"
-          value={userData.url}
+          value={url}
           onChange={handleChange}
           required
         />
@@ -145,7 +162,7 @@ export default function ModalComponent(): JSX.Element {
               label="学習時間（分）"
               id="studyMinutes"
               type="number"
-              value={userData.studyMinutes}
+              value={studyMinutes}
               onChange={handleChange}
               required
             />
@@ -153,7 +170,7 @@ export default function ModalComponent(): JSX.Element {
               label="タスクコード"
               id="taskCode"
               type="number"
-              value={userData.taskCode}
+              value={taskCode}
               onChange={handleChange}
               required
             />
@@ -161,7 +178,7 @@ export default function ModalComponent(): JSX.Element {
               label="学習言語（カンマ区切り）"
               id="studyLangs"
               type="text"
-              value={userData.studyLangs}
+              value={studyLangs}
               onChange={handleChange}
               required
             />
@@ -169,7 +186,7 @@ export default function ModalComponent(): JSX.Element {
               label="スコア"
               id="score"
               type="number"
-              value={userData.score}
+              value={score}
               onChange={handleChange}
               required
             />
@@ -183,7 +200,7 @@ export default function ModalComponent(): JSX.Element {
               label="経験日数"
               id="experienceDays"
               type="number"
-              value={userData.experienceDays}
+              value={experienceDays}
               onChange={handleChange}
               required
             />
@@ -191,7 +208,7 @@ export default function ModalComponent(): JSX.Element {
               label="使用言語（カンマ区切り）"
               id="useLangs"
               type="text"
-              value={userData.useLangs}
+              value={useLangs}
               onChange={handleChange}
               required
             />
@@ -199,7 +216,7 @@ export default function ModalComponent(): JSX.Element {
               label="開始可能コード"
               id="availableStartCode"
               type="number"
-              value={userData.availableStartCode}
+              value={availableStartCode}
               onChange={handleChange}
               required
             />
@@ -207,7 +224,7 @@ export default function ModalComponent(): JSX.Element {
               label="終了可能コード"
               id="availableEndCode"
               type="number"
-              value={userData.availableEndCode}
+              value={availableEndCode}
               onChange={handleChange}
               required
             />
