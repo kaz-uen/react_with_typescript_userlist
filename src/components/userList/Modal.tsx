@@ -4,6 +4,7 @@ import { addUser } from "@/features/UserSlice";
 import { closeModal } from "@/features/ModalSlice";
 import type { UserRole, User, UserFormData } from "@/types/userList";
 import { AppDispatch } from "@/store/Index";
+import { initialUserFormValues } from "@/constants/userList/initialUserFormValues";
 import Modal from "@/components/Modal";
 import Input from "@/components/Input";
 import styles from "@/components/userList/Modal.module.scss";
@@ -15,23 +16,7 @@ export default function ModalComponent(): JSX.Element {
   const dispatch: AppDispatch = useDispatch();
 
   const [selectedRole, setSelectedRole] = useState<UserRole>("student");
-  const [userData, setUserData] = useState<UserFormData>({
-    name: "",
-    email: "",
-    age: "",
-    postCode: "",
-    phone: "",
-    hobbies: "",
-    url: "",
-    studyMinutes: "",
-    taskCode: "",
-    studyLangs: "",
-    score: "",
-    experienceDays: "",
-    useLangs: "",
-    availableStartCode: "",
-    availableEndCode: ""
-  });
+  const [userData, setUserData] = useState<UserFormData>(initialUserFormValues);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -70,23 +55,7 @@ export default function ModalComponent(): JSX.Element {
     dispatch(addUser(newUserData));
 
     // フォームをリセット
-    setUserData({
-      name: "",
-      email: "",
-      age: "",
-      postCode: "",
-      phone: "",
-      hobbies: "",
-      url: "",
-      studyMinutes: "",
-      taskCode: "",
-      studyLangs: "",
-      score: "",
-      experienceDays: "",
-      useLangs: "",
-      availableStartCode: "",
-      availableEndCode: ""
-    });
+    setUserData(initialUserFormValues);
 
     // モーダルを閉じる
     dispatch(closeModal());

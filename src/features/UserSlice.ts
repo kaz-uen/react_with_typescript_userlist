@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import userListData from "@/utils/userListData";
+import userListData from "@/constants/userList/userListData";
 import type { User, UserState } from "@/types/userList/index";
 
 const initialState: UserState = {
@@ -59,7 +59,7 @@ const UserSlice = createSlice({
         state.error = null;
       })
       // リクエストが失敗したときの処理
-      .addCase(fetchUsers.rejected, (state, action) => {
+      .addCase(fetchUsers.rejected, (state) => {
         state.status = 'failed';
         state.error = "ユーザーデータの取得に失敗しました";
       })
