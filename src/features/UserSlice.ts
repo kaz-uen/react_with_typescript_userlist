@@ -15,6 +15,10 @@ export const fetchUsers = createAsyncThunk(
     try {
       return userListData;
     } catch (error) {
+      // 開発環境でのみログを出力
+      if (import.meta.env.DEV) {
+        console.error('Error details:', error);
+      }
       throw new Error("ユーザーデータの取得に失敗しました");
     }
   }
@@ -36,6 +40,10 @@ export const addUser = createAsyncThunk(
       };
       return newUser;
     } catch (error) {
+      // 開発環境でのみログを出力
+      if (import.meta.env.DEV) {
+        console.error('Error details:', error);
+      }
       throw new Error("ユーザーの追加に失敗しました");
     }
   }
