@@ -27,7 +27,7 @@ export default function Index(): JSX.Element {
 
   // 現在選択されている全てのフィルター条件に基づいてユーザーリストをフィルタリング
   const applyFilters = useCallback(() => {
-    let filteredList = userListData.filter((user: User) => {
+    const filteredList = userListData.filter((user: User) => {
       // タブによるフィルタリング
       const matchesTab = activeTab === "all" || user.role === activeTab;
       // 趣味によるフィルタリング
