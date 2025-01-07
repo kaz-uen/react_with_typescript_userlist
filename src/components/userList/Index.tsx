@@ -71,7 +71,7 @@ export default function Index(): JSX.Element {
   }
 
   // ロールでユーザーを絞り込み
-  const filterUserList = (role: string) => {
+  const filterUserList = (role: TabType) => {
     const filteredList = role === "all"
       ? userListData
       : userListData.filter((user: User) => user.role === role);
