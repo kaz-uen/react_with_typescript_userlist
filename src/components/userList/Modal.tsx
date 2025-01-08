@@ -47,25 +47,25 @@ export default function ModalComponent(): JSX.Element {
     e.preventDefault();
 
     const newUserData: Omit<User, "id"> = {
-      name: userData.name,
+      name,
       role: selectedRole,
-      email: userData.email,
-      age: Number(userData.age),
-      postCode: userData.postCode,
-      phone: userData.phone,
-      hobbies: userData.hobbies.split(','),
-      url: userData.url,
+      email,
+      age: Number(age),
+      postCode,
+      phone,
+      hobbies: hobbies.split(','),
+      url,
       ...(selectedRole === "student" && {
-        studyMinutes: Number(userData.studyMinutes),
-        taskCode: Number(userData.taskCode),
-        studyLangs: userData.studyLangs.split(','),
-        score: Number(userData.score)
+        studyMinutes: Number(studyMinutes),
+        taskCode: Number(taskCode),
+        studyLangs: studyLangs.split(','),
+        score: Number(score)
       }),
       ...(selectedRole === "mentor" && {
-        experienceDays: Number(userData.experienceDays),
-        useLangs: userData.useLangs.split(','),
-        availableStartCode: Number(userData.availableStartCode),
-        availableEndCode: Number(userData.availableEndCode)
+        experienceDays: Number(experienceDays),
+        useLangs: useLangs.split(','),
+        availableStartCode: Number(availableStartCode),
+        availableEndCode: Number(availableEndCode)
       }),
     };
 
