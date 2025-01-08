@@ -1,12 +1,9 @@
-import './App.css'
+import "@/reset.css";
+import "@/App.css";
+import UserList from "@/container/UserList";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <UserList />
   )
-}
-
-export default App
+};
